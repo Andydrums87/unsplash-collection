@@ -6,8 +6,8 @@ import imageStore from "../../stores/imageStore";
 import "./ImageDetailsPage.css"
 import Download from "../../components/Download/Download";
 import MainImage from "../../components/MainImage/MainImage";
-import UserInfo from "../../components/userInfo/userInfo";
-import Spinner from "../../components/Loading/Spinner";
+import UserInfo from "../../components/UserInfo/UserInfo";
+
 
 
 
