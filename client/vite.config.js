@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: "/unsplash-collection/",
   build: {
-    outDir: 'dist',
+    outDir: 'build',
  },
   server: {  
     host: true  
