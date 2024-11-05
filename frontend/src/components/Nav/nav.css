@@ -1,0 +1,37 @@
+.navBar {
+padding: 1rem;
+border-bottom: 1px solid;
+font-size: 0.75rem;
+color: #6C727F;
+width:100%;
+}
+
+a {
+  text-decoration: none;
+  color: #6C727F;
+}
+
+.navBar a.active {
+    background-color: #E5E7EB;
+    padding:0.5rem 1rem;
+    border-radius: 5px;;
+    color: #121826;
+}
+
+.logout {
+    cursor: pointer;
+}
+
+
+ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    padding-inline-start: 0px;;
+    gap:15px;
+    
+}
+
+.logo {
+    flex: 1;
+}

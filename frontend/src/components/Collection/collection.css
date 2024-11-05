@@ -1,0 +1,44 @@
+.collection__card {
+    height: 60px;
+    padding: 5px;
+   display:flex;
+   gap: 20px;;
+ 
+}
+
+.collection__card:hover {
+    background-color: #E5E7EB;
+}
+
+.card__middle {
+    display: flex;
+    flex-direction: column;
+    gap:1px;
+   
+    justify-content: center;
+}
+
+.collection__img {
+    height:100%;
+    width:3.5rem;
+    border-radius: 5px;
+    margin-bottom: 10px;;
+}
+
+.collection__name {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin-bottom: 5px;;
+ 
+}
+
+.collection__length {
+    font-size: 0.7rem;
+    margin:0;
+    font-weight: 300;
+    color: 
+    #8e9091cc;
+}
+
+

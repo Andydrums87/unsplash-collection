@@ -1,0 +1,165 @@
+.deatails__wrapper {
+  height: 100vh
+}
+.details__container {
+    display: flex;
+    padding:50px;
+    gap:30px;
+
+  }
+
+  .details__left {
+    width:50%;
+  }
+
+  @media (max-width: 700px) {
+    .details__container {
+      flex-direction: column;
+      padding:20px;
+    }
+
+    .details__left {
+      width:100%;
+
+    }
+  }
+  
+
+  
+  .details__right {
+    width: 50%;
+  }
+
+  @media(max-width: 640px) {
+    .details__right {
+      width: 100%;
+    }
+  }
+
+  .main__img {
+    width:100%;
+    height:100vh;
+    border-radius: 5px;;
+  }
+
+  @media(max-width: 700px) {
+    .main__img {
+      height: 60vh;
+    }
+  }
+
+  .user__info__top {
+   margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .user__profile__img {
+    border-radius: 50%;
+    height:40px;
+  }
+
+  .btn__container {
+    display: flex;
+    
+    gap:10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  #btn {
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 5px;
+    background-color:#E5E7EBCC;
+    color: #121826;
+    font-size: 0.70rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  
+
+
+
+  .add__btn {
+    background-image: url(/src/assets/Plus.svg);
+    background-repeat: no-repeat;
+    background-position: 10% 50%;
+    background-size: 20px;
+    
+  }
+
+  .download__btn {
+    background-image: url(/src/assets/downarrow.svg);
+    background-repeat: no-repeat;
+    background-position: 10% 50%;
+    background-size: 20px;
+  }
+
+  .username {
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .published__date {
+    font-size: 0.65rem;
+    font-weight: 300;
+    margin-top: 10px;
+  }
+
+  .heading__collections {
+    font-weight: 500;
+    margin-bottom: 20px;;
+  }
+
+  .glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+
+  

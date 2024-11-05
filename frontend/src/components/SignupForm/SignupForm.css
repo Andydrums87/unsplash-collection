@@ -1,0 +1,12 @@
+.signup__container {
+    margin: 0 auto;
+    width:50%;
+    border: 1px solid black;
+    padding: 1rem;
+    transition: border .24s ease-in-out;
+    box-shadow: 10px 10px 13px -3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 13px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 13px -3px rgba(0,0,0,0.75);
+}
+
+

@@ -1,0 +1,82 @@
+.pop_up_container {
+    position: absolute;
+    left:28%;
+    top:15%;
+    min-height:80%;
+    width:50%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+ 
+}
+
+
+
+.message__popup {
+    height:50px;
+    width:200px;
+    background-color: aqua;
+    position: absolute;
+    top:5%;
+    left:45%;
+}
+
+
+@media(max-width: 700px) {
+    .pop_up_container {
+        width: 100%;
+        left:0;
+        top:20%;
+        min-height:100vh;
+    }
+}
+
+.popup__heading {
+    font-size: 1.2rem;
+    font-weight: 450;
+    margin-bottom: 20px;;
+
+ 
+}
+
+.main__container {
+
+    display: flex;
+    border-radius: 5px;
+    width:100%;
+    padding:5px;
+}
+
+.main__container:hover {
+    background-color:#E5E7EB;
+}
+
+.add__collection {
+   height:20px;
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+}
+
+#popup__input {
+  width:92%;
+  margin-bottom: 20px;;
+}
+
+.matches {
+    font-size: 0.75rem;
+    font-weight: 300;
+}
+
+.exit__btn {
+    position: absolute;
+    top:1%;
+    right:2%;
+
+}
+

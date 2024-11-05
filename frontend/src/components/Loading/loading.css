@@ -1,0 +1,49 @@
+.loading__container {
+width:80%;
+
+ }
+
+ .bar__loading {
+    position: absolute;
+    top:9%;
+ }
+
+
+ 
+ .uploading__content {
+     font-size: 0.6rem;
+     font-weight: lighter;
+     margin-bottom: 20px;
+ }
+ 
+ 
+ progress {
+     width:100%;
+     height:1px;
+     position: relative;
+     border-radius: 5px;
+ }
+
+ .spinner__container {
+    position: absolute;
+    left:50%;
+    transform: translate(-50%);
+    top:50%;
+ }
+
+
+
+
+
+ 
+ 
+
+
+ 
+ 
+ @media (max-width: 640px) {
+     .loading__container {
+         width:80%;
+         left:10%;
+     }
+ }

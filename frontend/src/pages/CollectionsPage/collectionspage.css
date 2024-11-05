@@ -1,0 +1,55 @@
+.collections__container {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap:20px;
+}
+
+.heading__title  {
+    background-image: linear-gradient(to right, #f2c593, #8a3282);
+    
+    color: transparent;
+    --webkit-background-clip: text;
+    --webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: -2px;;
+    margin-bottom: 10px;;
+
+}
+
+.collections__info {
+    font-size: 0.8rem;
+    font-weight: 300;
+    width:30%;
+    margin-bottom: 30px;;
+    margin-top: 30px;;
+    
+}
+
+@media(max-width: 640px) {
+    .collections__info {
+        width:80%;
+    }
+}
+
+.span {
+    text-decoration: underline;
+    font-weight: bold;
+}
+.card__container {
+    justify-content: center;
+    padding: 0.2rem 2rem;
+    height:100vh;
+    display: flex;
+
+    gap:1rem;
+    flex-wrap: wrap;
+    width:100%;
+}
+
+

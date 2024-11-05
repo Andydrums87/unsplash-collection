@@ -1,0 +1,48 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1280px;
+  font-family: "be vietnam pro", sans-serif;
+
+}
+
+#back__btn {
+ 
+  background-color: blue;
+  width:150px;
+  
+  font-size: 0.6rem;
+  
+}
+
+.spinner {
+  position: absolute;
+
+
+  z-index: 1;
+
+  left:45%;
+  top:100px;
+  
+ 
+}
+
+@media (max-width: 600px) {
+  .spinner {
+    left:35%;
+    top:200px;
+  }
+}
+
+
+
+
+
+
+
+
+

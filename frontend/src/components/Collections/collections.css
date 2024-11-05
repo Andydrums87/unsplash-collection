@@ -1,0 +1,31 @@
+.delete__collection {
+   
+        height:20px;
+        background-color: transparent;
+        border: none;
+        /* background-image: url("src/assets/Remove.svg");
+        background-size: -20px;
+        background-repeat: no-repeat; */
+        cursor: pointer;
+        
+        align-items: center;
+}
+
+.add__delete {
+        display: flex;
+        
+        gap:10px;
+        cursor: pointer;
+}
+.main__container {
+        align-items: center;
+        justify-content: space-between;
+     
+ 
+}
+
+.collections__err {
+        font-size: 0.7rem;
+        margin-top: 20px;
+}
+

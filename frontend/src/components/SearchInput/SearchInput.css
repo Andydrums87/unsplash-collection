@@ -1,0 +1,21 @@
+
+
+.search__input {
+
+    width:500px;;
+    padding:1rem;
+    border-radius: 5px;
+    border:1px solid 
+    #E5E7EB;
+    background-image: url(/src/assets/Search.svg);
+    background-repeat: no-repeat;
+    background-position: 95% 50%; 
+    cursor: pointer;
+   
+}
+
+@media (max-width: 640px) {
+    .search__input {
+        width: 300px;
+    }
+}
