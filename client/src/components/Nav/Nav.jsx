@@ -1,6 +1,6 @@
 import React from "react";
 import "./nav.css"
-import Logo from "./logo.svg"
+import Logo from "../../assets/Logo.svg"
 import { useNavigate, NavLink } from "react-router-dom";
 import authStore from "../../stores/authStore";
 import { imageStore } from "../../stores/imageStore";
