@@ -12,7 +12,7 @@ import authStore from "../../stores/authStore";
 
 
 
-function ImageDetailPage () {
+function ImageDetailsPage () {
 
     const store = imageStore()
     const auth = authStore()
@@ -44,4 +44,4 @@ function ImageDetailPage () {
     )
 }
 
-export default ImageDetailPage;
+export default ImageDetailsPage;

@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'imageCollection'
     }]
-}, { supressReservedKeysWarning: true } );
+});
 const User = mongoose.model("User", userSchema)
 
 module.exports = User;

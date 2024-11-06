@@ -18,6 +18,7 @@ function Collections () {
       store.fetchImages()
     }, [])
 
+
     if(store.listedCollection?.length === 0) return  <p className="collections__err">this image doesn't belong to any collections</p>
 
 
@@ -27,7 +28,7 @@ function Collections () {
            {store?.listedCollection && store.listedCollection?.map((img, i) => {
              return (
               <div key={i}>
-                {img.collection.map((c, i) => {
+                {img.singleCollection?.map((c, i) => {
                   return (
                     <div key={i} className="main__container">
                       <Collection collection={c} key={c._id} id={c._id}/>

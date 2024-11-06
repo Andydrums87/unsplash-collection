@@ -16,7 +16,7 @@ const imageCollectionsSchema = new mongoose.Schema({
         ref: 'Image'
     }],
   
-}, { timestamps: true }, { supressReservedKeysWarning: true } );
+}, { timestamps: true });
 
 const imageCollection = mongoose.model("imageCollection", imageCollectionsSchema)
 

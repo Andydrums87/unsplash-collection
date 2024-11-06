@@ -22,7 +22,7 @@ const imageSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
-    collection: [{
+    singleCollection: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'imageCollection'
     }],
@@ -47,7 +47,7 @@ const imageSchema = new mongoose.Schema({
         required: false
     }
  
-}, { supressReservedKeysWarning: true } );
+});
 
 const Image = mongoose.model("Image", imageSchema)
 

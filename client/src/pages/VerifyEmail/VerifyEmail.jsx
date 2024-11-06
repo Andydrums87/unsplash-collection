@@ -23,7 +23,6 @@ function VerifyEmail (){
 
     useEffect(()=>{
         const verifyUser = async () => {
-
             await mainURL.get(`/verify-email/${params.id}/verify/${params.token}`)
             .then((res)=> {
                 setMessage(res.data?.message)

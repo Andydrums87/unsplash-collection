@@ -99,6 +99,7 @@ export const imageStore = create(
           width: data?.width,
           description: data?.alt_description,
         }})
+        console.log(get().imageData)
         set({ isLoading: false})
       })
       .catch(err => console.log(err))

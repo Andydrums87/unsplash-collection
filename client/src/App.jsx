@@ -5,7 +5,7 @@ import LoginPage from './pages/LoginPage'
 import SignUpPage from "./pages/SignUpPage"
 import './App.css'
 import SearchResultPage from './pages/SearchResultsPage/SearchResultPage'
-import ImageDetailPage from './pages/ImageDetailsPage/ImageDetailsPage'
+import ImageDetailsPage from './pages/imageDetailsPage/ImageDetailsPage'
 import CollectionsPage from './pages/CollectionsPage/CollectionsPage'
 import SingleCollectionPage from './pages/SingleCollectionPage'
 import ErrorPage from './pages/Errorpage/ErrorPage'
@@ -32,7 +32,7 @@ function App() {
       <Route path="/results" element={<SearchResultPage />}/>
       <Route path="/detail" element={
         <RequireAuth>
-            <ImageDetailPage />
+            <ImageDetailsPage />
         </RequireAuth>
       }/>
       <Route path="/collection" element={<SingleCollectionPage />}/>

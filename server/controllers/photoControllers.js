@@ -3,8 +3,8 @@ const Image = require("../models/image")
 const fetchImages = async (req, res) => {
     const collectionId = req.params.id
     try {
-        const images = await Image.find({ user: req.user._id, collection: collectionId })
-        .populate("collection")
+        const images = await Image.find({ user: req.user._id, singleCollection: collectionId })
+        .populate("singleCollection")
         res.json({ images })
        
     } catch (err) {
@@ -15,12 +15,10 @@ const fetchImages = async (req, res) => {
 
 const fetchImage = async (req, res) => {
 
-    const imageId = req.params.id
-    
-    
+    const imageId = req.params.id  
     try {
 
-    const image = await Image.find({ unsplashId : imageId, user: req.user._id }).populate("collection")
+    const image = await Image.find({ unsplashId : imageId, user: req.user._id }).populate("singleCollection")
     
     res.json({ image })
     
@@ -46,7 +44,7 @@ const addImage = async (req, res) => {
         description,
 
         user: req.user._id,
-        collection: collectionId
+        singleCollection: collectionId
     })
     image.save()
     console.log(image)

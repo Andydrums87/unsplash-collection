@@ -27,9 +27,7 @@ const handleVerify = async () => {
         await mainURL.post(`/resendEmail`, store.loginForm);
             swal(`Verification link sent to ${store.loginForm?.email}. Just click on the link in the email to complete your signup. 
                 If you don't see it you may need to check your spam folder`);
-                setTimeout(()=> {
-                    window.location.reload()
-                }, 6000)
+              
             
     } catch (err) {
         console.log(err)

@@ -116,7 +116,6 @@ async function sendEmailVerification (req, res) {
 async function verifyEmail(req, res) {
 
     try {
-
         const user = await User.findById({ _id: req.params.id })
         const emailToken = req.params.token;
 
@@ -164,9 +163,9 @@ async function login(req, res) {
     
         res.cookie("Authorization", token, { 
             expires: new Date(exp),
-            httpOnly: true,
+            // httpOnly: false,
             token: token,
-            // sameSite: 'lax',
+            sameSite: 'lax',
             // secure: process.env.NODE_ENV
         })
         res.status(200).send({token: token, message: "Logged In"});

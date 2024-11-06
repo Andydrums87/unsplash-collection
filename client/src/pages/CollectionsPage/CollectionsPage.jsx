@@ -14,9 +14,9 @@ import authStore from "../../stores/authStore";
 function CollectionsPage () {
 
     const store = imageStore()
-    const auth = authStore()
+   
 
-    console.log(auth.loggedIn)
+
 
     useEffect(() => {
         store.fetchCollections()
