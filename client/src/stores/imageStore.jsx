@@ -84,6 +84,7 @@ export const imageStore = create(
       set({ isLoading: true })
       set({ imageData: null})
       set({ unsplashId: e.target.id})
+     
       await unsplashURL.get(`/photos/${get().unsplashId}`) 
       .then(res => {
         const data = res.data
@@ -152,7 +153,6 @@ export const imageStore = create(
         set({ isLoading: true})
             await mainURL.get(`/collections`) 
             .then(result => {
-          
               set({ collections: result.data.collections})
               set({ isLoading: false})
             })
