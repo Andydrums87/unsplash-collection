@@ -237,7 +237,7 @@ export const authStore = create(
  
     {
         name: "user-session", // name of the item in the storage (must be unique)
-        storage: createJSONStorage(() => sessionStorage), // (optional) by default, 'localStorage' is used
+        // storage: createJSONStorage(() => sessionStorage), // (optional) by default, 'localStorage' is used
         partialize: (state) => ({ loggedIn: state.loggedIn, signedUp: state.signedUp})
       },
     ),

@@ -7,13 +7,16 @@ import "./collectionspage.css"
 import Toast from "../../components/Toast/Toast";
 
 import Spinner from "../../components/Loading/Spinner";
-
+import authStore from "../../stores/authStore";
 
 
 
 function CollectionsPage () {
 
     const store = imageStore()
+    const auth = authStore()
+
+    console.log(auth.loggedIn)
 
     useEffect(() => {
         store.fetchCollections()

@@ -166,8 +166,8 @@ async function login(req, res) {
     
         res.cookie("Authorization", token, { 
             expires: new Date(exp),
-            httpOnly: true,
-            sameSite: 'lax',
+            httpOnly: false,
+            // sameSite: 'lax',
             // secure: process.env.NODE_ENV === 'production'
         })
         res.sendStatus(200);
@@ -219,7 +219,7 @@ async function forgetPassword (req, res) {
             subject: 'Reset Password',
             html: `<p> Dear ${user.name},<p/>
                     <p>Reset Your Password</p>
-                    <p> Please click the following link to reset your password: <a href=${process.env.EMAIL_URL}/resetPassword/${token}>Click here<a/></p>
+                    <p> Please click the following link to reset your password: <a href=${process.env}/resetPassword/${token}>Click here<a/></p>
                     <p>This link will expire in 10 minutes</p>
                     <p>If you didn't request a password reset please ignore this email</p>
                     <p>Thanks, the Unsplash Team<p/>

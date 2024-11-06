@@ -7,6 +7,7 @@ import "./ImageDetailsPage.css"
 import Download from "../../components/Download/Download";
 import MainImage from "../../components/MainImage/MainImage";
 import UserInfo from "../../components/UserInfo/UserInfo";
+import authStore from "../../stores/authStore";
 
 
 
@@ -14,6 +15,7 @@ import UserInfo from "../../components/UserInfo/UserInfo";
 function ImageDetailPage () {
 
     const store = imageStore()
+    const auth = authStore()
 
 
     useEffect(()=> {
