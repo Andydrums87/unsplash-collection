@@ -151,9 +151,7 @@ async function login(req, res) {
         const user = await User.findOne({ email })
         if(!user)  {
             return res.status(409).send({message: "email is incorrect"})
-        }
-     
-         
+        }    
         if(!user.verified) {
             return res.status(403).send({ message: "Please verify your account"})
         }

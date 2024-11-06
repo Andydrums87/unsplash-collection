@@ -47,7 +47,7 @@ const imageSchema = new mongoose.Schema({
         required: false
     }
  
-});
+}, { supressReservedKeysWarning: true } );
 
 const Image = mongoose.model("Image", imageSchema)
 
