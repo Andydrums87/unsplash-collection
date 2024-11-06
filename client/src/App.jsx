@@ -5,7 +5,7 @@ import LoginPage from './pages/LoginPage'
 import SignUpPage from "./pages/SignUpPage"
 import './App.css'
 import SearchResultPage from './pages/SearchResultsPage/SearchResultPage'
-import ImageDetailsPage from './pages/imageDetailsPage/ImageDetailsPage'
+import ImageDetailsPage from './pages/ImageDetailsPage/ImageDetailsPage'
 import CollectionsPage from './pages/CollectionsPage/CollectionsPage'
 import SingleCollectionPage from './pages/SingleCollectionPage'
 import ErrorPage from './pages/Errorpage/ErrorPage'
