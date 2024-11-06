@@ -10,7 +10,7 @@ const photoController = require("./controllers/photoControllers")
 const requireAuth = require("./middleware/requireAuth")
 const connectToDb = require("./config/connectToDb")
 const session = require('express-session')
-const MemoryStore = require('memorystore')(session)
+
 
 
 
@@ -26,19 +26,19 @@ connectToDb()
 
 app.use(express.json())
 app.use(cors({
-    origin: "/",
+    origin: true,
     credentials: true,
 }))
 app.set("trust proxy",1);
-app.use(session({
-    cookie: { maxAge: 86400000 },
-    store: new MemoryStore({
-      checkPeriod: 86400000 // prune expired entries every 24h
-    }),
-saveUninitialized: true,
-    resave: false,
-    secret: 'keyboard cat'
-}))
+// app.use(session({
+//     cookie: { maxAge: 86400000 },
+//     store: new MemoryStore({
+//       checkPeriod: 86400000 // prune expired entries every 24h
+//     }),
+// // saveUninitialized: true,
+// //     resave: false,
+//     secret: 'keyboard cat'
+// }))
 app.use(cookieParser())
 
 
