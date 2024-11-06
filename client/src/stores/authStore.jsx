@@ -34,6 +34,7 @@ export const authStore = create(
     isLoading: false,
     icon: eyeOff,
     type: 'password',
+    token: "",
   
    
     updateLoginForm: (e) => {
@@ -95,6 +96,8 @@ export const authStore = create(
             const { loginForm } = authStore.getState()
             const res = await mainURL.post(`/login`, loginForm)
             console.log(res)
+            // cookies.set('token', res.data.token, options);
+            set({ token: res.data.token })
             setTimeout(()=> {
                 toast.success("Successfully Logged In")
             }, 100)
@@ -105,7 +108,7 @@ export const authStore = create(
                  set({ isloading: false})      
         } catch (err) { 
             set({ isLoading: false})
-            set({ errorMessage: err?.response.data.message})
+            set({ errorMessage: err.response?.data.message})
              }          
     },
     checkAuth: async () => {
@@ -239,7 +242,7 @@ export const authStore = create(
     {
         name: "user-session", // name of the item in the storage (must be unique)
         // storage: createJSONStorage(() => sessionStorage), // (optional) by default, 'localStorage' is used
-        partialize: (state) => ({ loggedIn: state.loggedIn, signedUp: state.signedUp})
+        partialize: (state) => ({ loggedIn: state.loggedIn, signedUp: state.signedUp, token: state.token})
       },
     ),
   )
