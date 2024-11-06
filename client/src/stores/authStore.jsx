@@ -94,6 +94,7 @@ export const authStore = create(
         try {
             const { loginForm } = authStore.getState()
             const res = await mainURL.post(`/login`, loginForm)
+            console.log(res)
             setTimeout(()=> {
                 toast.success("Successfully Logged In")
             }, 100)
