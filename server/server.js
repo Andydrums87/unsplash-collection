@@ -24,10 +24,10 @@ connectToDb()
 
 app.use(express.json())
 app.use(cors({
-    origin: "http://192.168.0.9:5173",
+    origin: true,
     credentials: true,
 }))
-app.set("trust proxy",1);
+// app.set("trust proxy",1);
 // app.use(session({
 //     secret: 'keyboard cat',
 //     resave: false,
