@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="main__body">
 
-    <HashRouter>
+    <BrowserRouter>
      <Routes>
       <Route path="/" element={<HomePage />}/>
       <Route path="/login" element={<LoginPage />}/>
@@ -43,7 +43,7 @@ function App() {
 
       <Route path='*' element={<ErrorPage />}/>
       </Routes>
-        </HashRouter>
+        </BrowserRouter>
     </div>
   )
 }
