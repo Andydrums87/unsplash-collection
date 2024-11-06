@@ -168,8 +168,8 @@ async function login(req, res) {
             expires: new Date(exp),
             httpOnly: true,
             token: token,
-            sameSite: 'lax',
-            secure: process.env.NODE_ENV
+            // sameSite: 'lax',
+            // secure: process.env.NODE_ENV
         })
         res.status(200).send({token: token, message: "Logged In"});
    
