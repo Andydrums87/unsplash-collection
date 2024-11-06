@@ -137,11 +137,8 @@ export const imageStore = create(
                 toast.success(`Image added to "${get().filteredCollections[0].name}" collection`, { 
                   icon: ({theme, type}) =>  
                   <img style={{ height: "70px", width: "70px" }}src={res.data.image.url.thumb} />})
-                setTimeout(function(){
-                  window.location.reload();
-               }, 6000);
                const newCollections = res.data.image
-               set((state) => ({ listedCollection: [...state.listedCollection, ...newCollections]}))
+               set((state) => ({ listedCollection: [...state.listedCollection, newCollections]}))
                set({ isLoading: false})
               
     

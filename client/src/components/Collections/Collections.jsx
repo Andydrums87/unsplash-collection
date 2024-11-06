@@ -18,6 +18,10 @@ function Collections () {
       store.fetchImages()
     }, [])
 
+    useEffect(()=> {
+      store.addImage()
+    }, [])
+
 
     if(store.listedCollection?.length === 0) return  <p className="collections__err">this image doesn't belong to any collections</p>
 
