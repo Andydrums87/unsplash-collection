@@ -210,9 +210,9 @@ export const imageStore = create(
                toast.success("Image Deleted Successfully", {
                 icon: ({theme, type}) =>  
                 <img style={{height: "70px", width: "70px"}} src={get().listedCollection[0].url.thumb}/>})
-                setTimeout(function(){
-                  window.location.reload();
-               }, 5000);
+              //   setTimeout(function(){
+              //     window.location.reload();
+              //  }, 5000);
                 const newCollections = [...get().listedCollection].filter(col=>{
                   return col._id !== e.target.id
                 })
