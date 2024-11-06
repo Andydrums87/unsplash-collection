@@ -7,7 +7,7 @@
     "start": "node server.js",
     "install-server": "cd server && npm install",
     "start-server": "cd server && node server.js",
-     "build-client": "cd client && npm run build",
+    "build-client": "cd client && npm run build",
     "start-client": "cd client && npm run dev"
   },
   "keywords": [],
@@ -21,6 +21,7 @@
     "express": "^4.21.0",
     "express-session": "^1.18.1",
     "jsonwebtoken": "^9.0.2",
+    "memorystore": "^1.6.7",
     "mongoose": "^8.7.0",
     "mongoose-custom-validators": "^0.0.4",
     "nodemailer": "^6.9.16",

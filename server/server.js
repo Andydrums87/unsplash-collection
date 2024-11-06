@@ -10,6 +10,8 @@ const photoController = require("./controllers/photoControllers")
 const requireAuth = require("./middleware/requireAuth")
 const connectToDb = require("./config/connectToDb")
 const session = require('express-session')
+const MemoryStore = require('memorystore')(session)
+
 
 
 
@@ -24,15 +26,18 @@ connectToDb()
 
 app.use(express.json())
 app.use(cors({
-    origin: true,
+    origin: "/",
     credentials: true,
 }))
-// app.set("trust proxy",1);
+app.set("trust proxy",1);
 app.use(session({
-    secret: 'keyboard cat',
+    cookie: { maxAge: 86400000 },
+    store: new MemoryStore({
+      checkPeriod: 86400000 // prune expired entries every 24h
+    }),
+saveUninitialized: true,
     resave: false,
-    saveUninitialized: false,
-   
+    secret: 'keyboard cat'
 }))
 app.use(cookieParser())
 
@@ -48,7 +53,7 @@ app.get("/checkAuth", requireAuth, userController.checkAuth);
 app.post("/forget-password", userController.forgetPassword)
 app.post("/resetPassword/:token", userController.resetPassword)
 
-app.get("/collections",  requireAuth, collectionController.fetchCollections);
+app.get("/collections", requireAuth, collectionController.fetchCollections);
 app.get("/collections/:id", requireAuth, collectionController.fetchCollection);
 app.get("/image/:id/collections", requireAuth, collectionController.fetchCollectionImg)
 app.post("/collections",  requireAuth, collectionController.createCollection);
