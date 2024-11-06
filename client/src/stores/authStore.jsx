@@ -151,12 +151,15 @@ export const authStore = create(
     },
     logout: async () => {
         set({ isLoading: true})
+        
         try {
             await mainURL.get(`/logout`)
+            set({ token: "" })
             setTimeout(()=> {
                 toast.success("Successfully Logged Out")
             }, 300)
             set({ loggedIn: false })
+
             set({ isLoading: false})
         } catch (err) {
             toast.error(`${err?.response.data.message}`)
