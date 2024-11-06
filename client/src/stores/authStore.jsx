@@ -96,7 +96,7 @@ export const authStore = create(
             const { loginForm } = authStore.getState()
             const res = await mainURL.post(`/login`, loginForm)
             console.log(res)
-            // cookies.set('token', res.data.token, options);
+            
             set({ token: res.data.token })
             setTimeout(()=> {
                 toast.success("Successfully Logged In")
@@ -107,8 +107,9 @@ export const authStore = create(
                 }})
                  set({ isloading: false})      
         } catch (err) { 
-            set({ isLoading: false})
+            
             set({ errorMessage: err.response?.data.message})
+            set({ isLoading: false})
              }          
     },
     checkAuth: async () => {

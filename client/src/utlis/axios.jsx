@@ -1,10 +1,25 @@
 import axios from "axios"
+import authStore from "../stores/authStore";
+
+const store = authStore()
 
 
 const mainURL = axios.create({
     baseURL: import.meta.env.VITE_BASE_URL,
-    withCredentials: true
+    withCredentials: true,
+    timeout: 5000,
+    
+    headers: {
+        "Access-Control-Allow-Origin" : "*",
+        "Content-type": "Application/json",
+        "Authorization": `Bearer ${store.token}`,
+        "Accept-Encoding": "*",
+        
+        }   
+
 })
+
+console.log(store.token)
 
 const accessKey = import.meta.env.VITE_UNSPLASH_KEY
 

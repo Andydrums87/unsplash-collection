@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter, HashRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, HashRouter, MemoryRouter, Routes, Route } from "react-router-dom"
 import HomePage from "../src/pages/HomePage/HomePage"
 import LoginPage from './pages/LoginPage'
 import SignUpPage from "./pages/SignUpPage"
@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="main__body">
 
-    <BrowserRouter>
+    <MemoryRouter>
      <Routes>
       <Route path="/" element={<HomePage />}/>
       <Route path="/login" element={<LoginPage />}/>
@@ -36,13 +36,13 @@ function App() {
         </RequireAuth>
       }/>
       <Route path="/collection" element={<SingleCollectionPage />}/>
-      <Route path="/collections" element={
+      <Route path="/collections" exact element={
           <RequireAuth>
             <CollectionsPage />
          </RequireAuth>  }/>
       <Route path='*' element={<ErrorPage />}/>
       </Routes>
-        </BrowserRouter>
+        </MemoryRouter>
     </div>
   )
 }
