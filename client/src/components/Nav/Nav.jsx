@@ -19,7 +19,7 @@ function Nav () {
         await store.logout();
         imageStore.persist.clearStorage();
         image.initialState()
-        navigate("/collections")
+        // navigate("/collections")
     }
 
     return (
