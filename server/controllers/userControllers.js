@@ -171,7 +171,7 @@ async function login(req, res) {
             // sameSite: 'lax',
             // secure: process.env.NODE_ENV === 'production'
         })
-        res.sendStatus(200);
+        res.status(200).send({token: token, message: "Logged In"});
    
         console.log(user)
     } catch (err) {
