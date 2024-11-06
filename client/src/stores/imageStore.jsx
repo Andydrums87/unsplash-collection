@@ -121,7 +121,7 @@ export const imageStore = create(
         set({ isLoading: true })
           await mainURL.get(`/collections/${get().id}/image`)
           .then(result=> {
-              // console.log(result.data.images)
+              console.log(result.data.images)
               set({ images: result.data.images} )
               set({ isLoading: false})
           })
@@ -143,7 +143,7 @@ export const imageStore = create(
                const newCollections = res.data.image
                set((state) => ({ listedCollection: [...state.listedCollection, ...newCollections]}))
                set({ isLoading: false})
-               console.log(get().newCollections)
+              
     
               })
 
@@ -167,7 +167,7 @@ export const imageStore = create(
         .then(result => {
             // console.log(result.data)
             const data = result.data
-          set({ singleCollection: data })
+          set({ collection: data })
           
            set({ isLoading: false })
             

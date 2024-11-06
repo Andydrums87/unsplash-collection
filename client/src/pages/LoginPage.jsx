@@ -14,7 +14,7 @@ function LoginPage () {
     return (
 
         <div>
-         <Nav />
+          <Nav /> 
          <Gradient />
         <LoginForm />
         <Spinner />

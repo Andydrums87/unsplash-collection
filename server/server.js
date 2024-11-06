@@ -29,7 +29,7 @@ app.use(cors({
     origin: true,
     credentials: true,
 }))
-app.set("trust proxy",1);
+// app.set("trust proxy",1);
 // app.use(session({
 //     cookie: { maxAge: 86400000 },
 //     store: new MemoryStore({
@@ -46,7 +46,7 @@ app.post("/signup", userController.signup);
 app.get("/verify-email")
 app.get("/verify-email/:id/verify/:token", userController.verifyEmail)
 app.post("/login",  userController.login);
-app.post("/resendEmail", userController.sendEmailVerification)
+// app.post("/resendEmail", userController.sendEmailVerification)
 app.get("/logout",  userController.logout);
 app.get("/checkAuth", requireAuth, userController.checkAuth);
 

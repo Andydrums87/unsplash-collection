@@ -1,7 +1,7 @@
 import axios from "axios"
 import authStore from "../stores/authStore";
 
-const store = authStore()
+
 
 
 const mainURL = axios.create({
@@ -9,17 +9,17 @@ const mainURL = axios.create({
     withCredentials: true,
     timeout: 5000,
     
-    headers: {
-        "Access-Control-Allow-Origin" : "*",
-        "Content-type": "Application/json",
-        "Authorization": `Bearer ${store.token}`,
-        "Accept-Encoding": "*",
+    // headers: {
+    //     "Access-Control-Allow-Origin" : "",
+    //     "Content-type": "Application/json",
+    //     "Authorization": `Bearer ${store.token}`,
+    //     "Accept-Encoding": "*",
         
-        }   
+    //     }   
 
 })
 
-console.log(store.token)
+
 
 const accessKey = import.meta.env.VITE_UNSPLASH_KEY
 

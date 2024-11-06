@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="main__body">
 
-    <MemoryRouter>
+    <BrowserRouter>
      <Routes>
       <Route path="/" element={<HomePage />}/>
       <Route path="/login" element={<LoginPage />}/>
@@ -42,7 +42,7 @@ function App() {
          </RequireAuth>  }/>
       <Route path='*' element={<ErrorPage />}/>
       </Routes>
-        </MemoryRouter>
+        </BrowserRouter>
     </div>
   )
 }
