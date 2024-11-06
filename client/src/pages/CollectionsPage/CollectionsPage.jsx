@@ -2,23 +2,25 @@ import React, { useState, useEffect } from "react";
 import Nav from "../../components/Nav/Nav";
 import imageStore from "../../stores/imageStore";
 import AllCollections from "../../components/AllCollections/AllCollections"
-
+import authStore from "../../stores/authStore";
 import "./collectionspage.css"
 import Toast from "../../components/Toast/Toast";
 
 import Spinner from "../../components/Loading/Spinner";
-import authStore from "../../stores/authStore";
+
 
 
 
 function CollectionsPage () {
 
     const store = imageStore()
+
    
 
 
 
     useEffect(() => {
+        
         store.fetchCollections()
     }, [])
     

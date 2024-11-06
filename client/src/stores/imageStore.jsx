@@ -139,7 +139,7 @@ export const imageStore = create(
                   <img style={{ height: "70px", width: "70px" }}src={res.data.image.url.thumb} />})
                 setTimeout(function(){
                   window.location.reload();
-               }, 1000);
+               }, 6000);
                const newCollections = res.data.image
                set((state) => ({ listedCollection: [...state.listedCollection, ...newCollections]}))
                set({ isLoading: false})

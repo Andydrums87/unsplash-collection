@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="main__body">
 
-    <BrowserRouter>
+    <HashRouter>
      <Routes>
       <Route path="/" element={<HomePage />}/>
       <Route path="/login" element={<LoginPage />}/>
@@ -40,9 +40,10 @@ function App() {
           <RequireAuth>
             <CollectionsPage />
          </RequireAuth>  }/>
+
       <Route path='*' element={<ErrorPage />}/>
       </Routes>
-        </BrowserRouter>
+        </HashRouter>
     </div>
   )
 }

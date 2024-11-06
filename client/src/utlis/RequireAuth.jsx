@@ -11,7 +11,9 @@ export default function RequireAuth(props) {
         if(store.loggedIn === false) {
             store.checkAuth()
         }
+        
     }, [])
+ 
      
     if(store.loggedIn === null) {
         return <LoginPage />
