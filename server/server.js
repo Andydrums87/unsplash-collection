@@ -15,16 +15,23 @@ const session = require('express-session')
 
 
 const app = express()
-
+const corsOptions = {
+    origin: 'https://unsplash-collection-frontend.onrender.com',
+    credentials: true
+  };
+  
+  app.use(cors(corsOptions));
 
 
 connectToDb()
 
 app.use(express.json())
-app.use(cors({
-    origin: [ "https://unsplash-collection-frontend.onrender.com" ],
-    credentials: true,  
-}))
+// app.use(cors({
+//     origin: [ "https://unsplash-collection-frontend.onrender.com" ],
+//     credentials: true,  
+// }))
+
+  
 
 
 // 
@@ -65,6 +72,6 @@ app.post("/collections/:id/image", requireAuth, photoController.addImage)
 app.delete("/image/:id", requireAuth, photoController.deleteImage)
 
 
+const PORT = process.env.PORT || 3000
 
-
-app.listen(`${process.env.PORT}`, console.log(`listening on Port ${process.env.PORT}`));
+app.listen(PORT, console.log(`listening on Port ${PORT}`));
