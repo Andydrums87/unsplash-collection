@@ -149,14 +149,31 @@ export const imageStore = create(
               },
 
       fetchCollections: async () => {
-        set({ isLoading: true})
-            await mainURL.get(`/collections`) 
-            .then(result => {
-              set({ collections: result.data.collections})
-              set({ isLoading: false})
-            })
-            .catch(err => console.log(err))
+        set({ isLoading: true }) 
+        try {
+          const res = await mainURL.get(`/collections`) 
+          console.log(res)
+          set({ collections: result.data.collections })
+          set({ isLoading: false})
+        } catch (err) {
+          set({ isLoading: false })
+          console.log(err)
+        }
       },
+        
+
+
+      
+
+        //  }  await mainURL.get(`/collections`) 
+        //     .then(result => {
+        //       console.log(result)
+        //       set({ collections: result.data?.collections})
+        //       set({ isLoading: false})
+        //     })
+        //     .catch(err => set({ isLoading: false}) console.log(err))
+            
+  
 
       fetchCollection: async (id) => {
         set({ isLoading: true })

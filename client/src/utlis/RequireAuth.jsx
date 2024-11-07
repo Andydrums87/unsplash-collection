@@ -6,6 +6,12 @@ import LoginPage from "../pages/LoginPage"
 const RequireAuth = () => {
     const store = authStore()
 
+    //  useEffect(() => {
+    //     if(store.loggedIn === false) {
+    //         store.checkAuth()
+    //     }   
+    //  }, [])
+
     return  (
         store.loggedIn ? <Outlet /> : <Navigate to='/login' />
     )
@@ -20,11 +26,11 @@ export default RequireAuth;
 
 //     const store = authStore()
 
-//     // useEffect(() => {
-//     //     if(store.loggedIn === false) {
-//     //         store.checkAuth()
-//     //     }   
-//     // }, [])
+    // useEffect(() => {
+    //     if(store.loggedIn === false) {
+    //         store.checkAuth()
+    //     }   
+    // }, [])
  
      
 //     if(store.loggedIn === null) {
