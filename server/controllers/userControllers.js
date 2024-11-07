@@ -165,7 +165,7 @@ async function login(req, res) {
             expires: new Date(exp),
             // httpOnly: true,
             token: token,
-            sameSite: 'none',
+           
             secure: true,
             // secure: process.env.NODE_ENV
         })

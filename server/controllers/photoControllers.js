@@ -42,9 +42,9 @@ const addImage = async (req, res) => {
         height,
         width,
         description,
-
+        singleCollection: collectionId,
         user: req.user._id,
-        singleCollection: collectionId
+       
     })
     image.save()
     console.log(image)
