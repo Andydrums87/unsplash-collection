@@ -25,10 +25,23 @@ const app = express()
 connectToDb()
 
 app.use(express.json())
-app.use(cors({
-    origin: true,
-    credentials: true,
-}))
+// app.use(cors({
+//     origin: true,
+//     credentials: true,
+// }))
+
+app.use(
+    cors({
+        origin: function (origin, callback) {
+            if(!origin) return callback(null, true);
+            if(allowedOrigins.indexOf(origin) === -1) {
+                let msg = "The Cors Policy for this site does not allow access from the specified origin";
+                return callback(new Error(msg), false)
+            }
+            return callback(null, true)
+        },
+    })
+)
 // app.set("trust proxy",1);
 // app.use(session({
 //     cookie: { maxAge: 86400000 },
