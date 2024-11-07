@@ -22,7 +22,7 @@ connectToDb()
 
 app.use(express.json())
 app.use(cors({
-    origin: "http://192.168.0.9:4173",
+    origin: "https://unsplash-collection-frontend.onrender.com",
     credentials: true,
     
 }))
