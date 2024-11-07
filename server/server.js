@@ -14,12 +14,8 @@ const session = require('express-session')
 
 
 
-
-
-
-
 const app = express()
-
+const allowedOrigins = "*"
 
 
 connectToDb()
