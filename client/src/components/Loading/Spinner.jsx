@@ -14,14 +14,19 @@ function Spinner () {
     if(store?.isLoading || auth?.isLoading)
 
     return (
-    <div className="spinner__container">
+        <>
+            <div className="spinner__container">
     <ClipLoader
     loading={auth?.isLoading || store?.isLoading}
     size={40}
     aria-label="Loading Spinner"
     data-testid="loader"
     />
+    
     </div>
+    <p>Loading....</p>
+        </>
+
     )
 
 

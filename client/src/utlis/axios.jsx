@@ -9,13 +9,13 @@ const mainURL = axios.create({
     withCredentials: true,
     // timeout: 5000,
     
-    // headers: {
-    //     "Access-Control-Allow-Origin" : "",
-    //     "Content-type": "Application/json",
-    //     "Authorization": `Bearer ${store.token}`,
-    //     "Accept-Encoding": "*",
+    headers: {
+        "Access-Control-Allow-Origin" : "https://unsplash-collection-backend.onrender.com",
+        // "Content-type": "Application/json",
+        // "Authorization": `Bearer ${store.token}`,
+        // "Accept-Encoding": "*",
         
-    //     }    s
+        }    
 
 })
 
