@@ -22,8 +22,9 @@ connectToDb()
 
 app.use(express.json())
 app.use(cors({
-    origin: true,
+    origin: "http://192.168.0.9:4173",
     credentials: true,
+    
 }))
 
 
