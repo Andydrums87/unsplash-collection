@@ -10,7 +10,7 @@ const photoController = require("./controllers/photoControllers")
 const requireAuth = require("./middleware/requireAuth")
 const connectToDb = require("./config/connectToDb")
 const session = require('express-session')
-const path = require('path');
+
 
 
 
@@ -21,7 +21,7 @@ const corsOptions = {
     origin: ['https://unsplash-collection-frontend.onrender.com', 'http://localhost:4173', 'http://192.168.0.9:4173'],
     credentials: true
   };
-  
+  app.set("trust proxy",1);
   app.use(cors(corsOptions));
 
 
@@ -37,7 +37,7 @@ app.use(express.json())
 
 
 // 
-// app.set("trust proxy",1);
+
 // app.use(session({
 //     cookie: { maxAge: 86400000 },
 //     store: new MemoryStore({
@@ -49,13 +49,13 @@ app.use(express.json())
 // }))
 app.use(cookieParser())
 
-app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, '/..client/dist/index.html'), function(err) {
-        if(err) {
-            res.status(500).send(err)
-        }
-    })
-})
+// app.get('*', function(req, res) {
+//     res.sendFile(path.join(__dirname, '/dist/index.html'), function(err) {
+//         if(err) {
+//             res.status(500).send(err)
+//         }
+//     })
+// })
 
 
 app.post("/signup", userController.signup);
