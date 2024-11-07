@@ -96,17 +96,14 @@ export const authStore = create(
             const { loginForm } = authStore.getState()
             const res = await mainURL.post(`/login`, loginForm)
             console.log(res)
-            
             set({ token: res.data.token })
-            
-     
                 toast.success("Successfully Logged In")
-       
-               set({loggedIn: true, loginForm: {
+                set({loggedIn: true, loginForm: {
                         email: "",
                         password: "",
                 }})
-                set({ isLoading: false})  
+                set({ isLoading: false})
+                  
         } catch (err) { 
             
             set({ errorMessage: err.response?.data.message})
@@ -246,7 +243,7 @@ export const authStore = create(
     {
         name: "user-session", // name of the item in the storage (must be unique)
         storage: createJSONStorage(() => sessionStorage), // (optional) by default, 'localStorage' is used
-        partialize: (state) => ({ loggedIn: state.loggedIn, signedUp: state.signedUp, token: state.token})
+        // partialize: (state) => ({ loggedIn: state.loggedIn, signedUp: state.signedUp, token: state.token})
       },
     ),
   )
