@@ -44,7 +44,7 @@ function Modal () {
              <Collection collection={c} key={c._id} id={c._id}/>
              <div className="add__delete">
              {/* <img src='/src/assets/Plus.svg' alt="add image" /> */}
-            <button className="add__collection" id={c._id} onClick={(e)=>store.addImage(e)}>Add to collection</button>
+            <button className="add__collection" id={c._id} onClick={(e)=>{store.handleNavigate(e); store.addImage(e)}}>Add to collection</button>
              </div>
 
             </div>

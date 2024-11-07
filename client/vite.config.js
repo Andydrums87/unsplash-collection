@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react()],
   base: "/",
   proxy: 
-    "https://unsplash-collection-backend.onrender.com/",
-    // "http://localhost:3000",
+    // "https://unsplash-collection-backend.onrender.com/",
+    "http://localhost:3000",
   
   build: {
     outDir: 'dist',
