@@ -15,16 +15,16 @@ function Spinner () {
 
     return (
         <>
-            <div className="spinner__container">
+    <div className="spinner__container">
     <ClipLoader
     loading={auth?.isLoading || store?.isLoading}
     size={40}
     aria-label="Loading Spinner"
     data-testid="loader"
     />
-    
+    <span>Loading....</span>
     </div>
-    <p>Loading....</p>
+
         </>
 
     )

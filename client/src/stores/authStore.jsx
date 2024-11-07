@@ -98,14 +98,15 @@ export const authStore = create(
             console.log(res)
             
             set({ token: res.data.token })
-            setTimeout(()=> {
+            
+     
                 toast.success("Successfully Logged In")
-            }, 100)
+       
                set({loggedIn: true, loginForm: {
                         email: "",
                         password: "",
                 }})
-                 set({ isloading: false})      
+                set({ isLoading: false})  
         } catch (err) { 
             
             set({ errorMessage: err.response?.data.message})

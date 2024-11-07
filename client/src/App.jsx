@@ -30,16 +30,20 @@ function App() {
       <Route path="/forget-password" element={<ForgetPassword />}/>
       <Route path="/resetPassword/:token" element={<ResetPassword />}/>
       <Route path="/results" element={<SearchResultPage />}/>
-      <Route path="/detail" element={
+      {/* <Route path="/detail" element={
         <RequireAuth>
             <ImageDetailsPage />
         </RequireAuth>
-      }/>
+      }/> */}
       <Route path="/collection" element={<SingleCollectionPage />}/>
-      <Route path="/collections" exact element={
+      {/* <Route path="/collections" exact element={
           <RequireAuth>
             <CollectionsPage />
-         </RequireAuth>  }/>
+         </RequireAuth>  }/> */}
+      <Route element={<RequireAuth />}>
+      <Route path="/collections" element={<CollectionsPage />} />
+      <Route path="/detail" element={<ImageDetailsPage />} />
+      </Route>
 
       <Route path='*' element={<ErrorPage />}/>
       </Routes>

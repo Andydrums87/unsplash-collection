@@ -17,11 +17,11 @@ function CollectionsPage () {
     const store = imageStore()
 
 
-
+    
 
     useEffect(() => {
         
-        store.fetchCollections()
+            store.fetchCollections()
     }, [])
     
 
@@ -32,7 +32,6 @@ function CollectionsPage () {
     return (
         <>
          <Nav />
-   
             <div className="collections__container">
             <div className="collections__info">
             <h1 className="heading__title"> Collections</h1>
