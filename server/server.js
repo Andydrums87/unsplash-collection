@@ -16,7 +16,7 @@ const session = require('express-session')
 
 const app = express()
 const corsOptions = {
-    origin: 'https://unsplash-collection-frontend.onrender.com',
+    origin: ['https://unsplash-collection-frontend.onrender.com', 'http://localhost:4173', 'http://192.168.0.9:4173'],
     credentials: true
   };
   
@@ -46,6 +46,14 @@ app.use(express.json())
 //     secret: 'keyboard cat'
 // }))
 app.use(cookieParser())
+
+app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'Unsplash Collection/client/dist/index.html'), function(err) {
+        if(err) {
+            res.status(500).send(err)
+        }
+    })
+})
 
 
 app.post("/signup", userController.signup);
