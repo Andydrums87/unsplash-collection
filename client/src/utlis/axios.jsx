@@ -7,7 +7,7 @@ import authStore from "../stores/authStore";
 const mainURL = axios.create({
     baseURL: import.meta.env.VITE_BASE_URL,
     withCredentials: true,
-    timeout: 5000,
+    // timeout: 5000,
     
     // headers: {
     //     "Access-Control-Allow-Origin" : "",
@@ -15,7 +15,7 @@ const mainURL = axios.create({
     //     "Authorization": `Bearer ${store.token}`,
     //     "Accept-Encoding": "*",
         
-    //     }   
+    //     }    s
 
 })
 
