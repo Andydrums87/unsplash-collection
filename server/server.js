@@ -10,6 +10,8 @@ const photoController = require("./controllers/photoControllers")
 const requireAuth = require("./middleware/requireAuth")
 const connectToDb = require("./config/connectToDb")
 const session = require('express-session')
+const path = require('path');
+
 
 
 
