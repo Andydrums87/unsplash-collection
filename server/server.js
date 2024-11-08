@@ -56,6 +56,6 @@ app.post("/api/collections/:id/image", requireAuth, photoController.addImage)
 app.delete("/api/image/:id", requireAuth, photoController.deleteImage)
 
 
-const PORT = process.env.PORT || 3000
+// const PORT = process.env.PORT || 3000
 
-app.listen(PORT, console.log(`listening on Port ${PORT}`));
+app.listen(process.env.PORT || 3000, console.log(`listening on Port ${process.env.PORT || 3000}`));
