@@ -1,7 +1,7 @@
 import axios from "axios"
-import authStore from "../stores/authStore";
 
-const store = authStore()
+
+
 
 
 const mainURL = axios.create({
@@ -13,7 +13,7 @@ const mainURL = axios.create({
 
 mainURL.interceptors.request.use(
     config => {
-        config.headers['Authorization'] = `Bearer ${store.token}`
+        config.headers['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
         return config
     }, 
     error => {

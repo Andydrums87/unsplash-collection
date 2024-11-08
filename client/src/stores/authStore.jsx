@@ -98,6 +98,7 @@ export const authStore = create(
             const res = await mainURL.post(`/login`, loginForm)
             console.log(res)
             set({ token: res.data.token })
+            localStorage.setItem('token', res.data.token)
                 toast.success("Successfully Logged In")
                 set({loggedIn: true, loginForm: {
                         email: "",
