@@ -18,6 +18,7 @@ function CollectionsPage () {
 
 
     useEffect(() => {
+    
         store.fetchCollections()
     }, [])
     
