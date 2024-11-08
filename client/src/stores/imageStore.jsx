@@ -155,6 +155,7 @@ export const imageStore = create(
           console.log(res)
           set({ collections: res.data?.collections })
           set({ isLoading: false})
+    
         } catch (err) {
           set({ isLoading: false })
           console.log(err)
