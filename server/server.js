@@ -18,8 +18,9 @@ const session = require('express-session')
 
 const app = express()
 const corsOptions = {
-    origin: ['https://unsplash-collection-frontend.onrender.com', 'http://localhost:4173', 'http://192.168.0.9:4173', 'http://172.20.10.2:4173', 'https://unsplash-collection-backend.onrender.com', 'http://localhost:3000'],
-    credentials: true
+    origin: ['https://unsplash-collection-frontend.onrender.com', 'http://localhost:4173', 'http://192.168.0.9:4173', 'http://172.20.10.2:4173', 'https://unsplash-collection-backend.onrender.com', 'http://localhost:3000', 'http://localhost:5173'],
+    credentials: true,
+    methods: ['GET', 'PUT', 'POST', 'DELETE']
   };
   app.set("trust proxy",1);
   app.use(cors(corsOptions));
@@ -28,58 +29,31 @@ const corsOptions = {
 connectToDb()
 
 app.use(express.json())
-// app.use(cors({
-//     origin: [ "https://unsplash-collection-frontend.onrender.com" ],
-//     credentials: true,  
-// }))
-
-  
-
-
-// 
-
-// app.use(session({
-//     cookie: { maxAge: 86400000 },
-//     store: new MemoryStore({
-//       checkPeriod: 86400000 // prune expired entries every 24h
-//     }),
-// // saveUninitialized: true,
-// //     resave: false,
-//     secret: 'keyboard cat'
-// }))
 app.use(cookieParser())
 
-// app.get('*', function(req, res) {
-//     res.sendFile(path.join(__dirname, '/dist/index.html'), function(err) {
-//         if(err) {
-//             res.status(500).send(err)
-//         }
-//     })
-// })
 
-
-app.post("/signup", userController.signup);
+app.post("/api/signup", userController.signup);
 app.get("/verify-email")
-app.get("/verify-email/:id/verify/:token", userController.verifyEmail)
-app.post("/login",  userController.login);
+app.get("/api/verify-email/:id/verify/:token", userController.verifyEmail)
+app.post("/api/login",  userController.login);
 // app.post("/resendEmail", userController.sendEmailVerification)
-app.get("/logout",  userController.logout);
-app.get("/checkAuth", requireAuth, userController.checkAuth);
+app.get("/api/logout",  userController.logout);
+app.get("/api/checkAuth", requireAuth, userController.checkAuth);
 
-app.post("/forget-password", userController.forgetPassword)
-app.post("/resetPassword/:token", userController.resetPassword)
+app.post("/api/forget-password", userController.forgetPassword)
+app.post("/api/resetPassword/:token", userController.resetPassword)
 
-app.get("/collections", requireAuth, collectionController.fetchCollections);
-app.get("/collections/:id", requireAuth, collectionController.fetchCollection);
-app.get("/image/:id/collections", requireAuth, collectionController.fetchCollectionImg)
-app.post("/collections",  requireAuth, collectionController.createCollection);
-app.delete("/collections/:id", requireAuth, collectionController.deleteCollection);
+app.get("/api/collections", requireAuth, collectionController.fetchCollections);
+app.get("/api/collections/:id", requireAuth, collectionController.fetchCollection);
+app.get("/api/image/:id/collections", requireAuth, collectionController.fetchCollectionImg)
+app.post("/api/collections",  requireAuth, collectionController.createCollection);
+app.delete("/api/collections/:id", requireAuth, collectionController.deleteCollection);
 
-app.get("/collections/:id/image", requireAuth, photoController.fetchImages)
-app.get("collections/:id/image", requireAuth, photoController.fetchImage)
-app.get("/image/:id", requireAuth, photoController.fetchImage)
-app.post("/collections/:id/image", requireAuth, photoController.addImage)
-app.delete("/image/:id", requireAuth, photoController.deleteImage)
+app.get("/api/collections/:id/image", requireAuth, photoController.fetchImages)
+app.get("api/collections/:id/image", requireAuth, photoController.fetchImage)
+app.get("/api/image/:id", requireAuth, photoController.fetchImage)
+app.post("/api/collections/:id/image", requireAuth, photoController.addImage)
+app.delete("/api/image/:id", requireAuth, photoController.deleteImage)
 
 
 const PORT = process.env.PORT || 3000

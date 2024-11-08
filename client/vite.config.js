@@ -6,11 +6,14 @@ export default defineConfig({
   plugins: [react()],
   base: "/",
 
-    proxy:  "https://unsplash-collection-backend.onrender.com",
 
-
-
-  
+  server: {
+    proxy: {
+      target: 'https://unsplash-collection-backend.onrender.com',
+      changeOrigin: true,
+      secure: false,      
+    }
+  },
   build: {
     outDir: 'dist',
  },
