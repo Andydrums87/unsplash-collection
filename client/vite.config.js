@@ -9,7 +9,7 @@ export default defineConfig({
     proxy:  "https://unsplash-collection-backend.onrender.com",
 
 
-    // "http://localhost:3000",
+
   
   build: {
     outDir: 'dist',
