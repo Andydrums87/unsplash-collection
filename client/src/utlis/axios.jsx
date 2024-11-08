@@ -1,7 +1,7 @@
 import axios from "axios"
 import authStore from "../stores/authStore";
 
-
+const store = authStore()
 
 
 const mainURL = axios.create({
@@ -10,6 +10,16 @@ const mainURL = axios.create({
     timeout: 5000,
 
 })
+
+mainURL.interceptors.request.use(
+    config => {
+        config.headers['Authorization'] = `Bearer ${store.token}`
+        return config
+    }, 
+    error => {
+        return Promise.reject(error)
+    }
+)
 
 
 
