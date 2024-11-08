@@ -163,14 +163,12 @@ async function login(req, res) {
     
         res.cookie("Authorization", token, { 
             expires: new Date(exp),
-            // httpOnly: true,
+            httpOnly: true,
             token: token,
-            sameSite: "lax",
+            sameSite: "none",
             secure: true,
             // secure: process.env.NODE_ENV
         })
-
-    
         res.status(200).send({token: token, message: "Logged In"});
    
         console.log(user)
