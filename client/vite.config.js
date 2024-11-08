@@ -5,19 +5,20 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: "/",
-
-
   server: {
     proxy: {
-      target: 'https://unsplash-collection-backend.onrender.com',
-      changeOrigin: true,
-      secure: false,      
-    }
+      '/api': {
+        target: 'https://unsplash-collection-backend.onrender.com',
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
   },
   build: {
     outDir: 'dist',
  },
-  server: {  
-    host: true  
-}
+//   server: {  
+//     host: true  
+// }
 })
