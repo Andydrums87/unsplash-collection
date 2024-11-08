@@ -153,7 +153,7 @@ export const imageStore = create(
         try {
           const res = await mainURL.get(`/collections`) 
           console.log(res)
-          set({ collections: result.data.collections })
+          set({ collections: res.data?.collections })
           set({ isLoading: false})
         } catch (err) {
           set({ isLoading: false })

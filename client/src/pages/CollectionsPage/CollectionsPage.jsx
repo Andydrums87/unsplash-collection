@@ -17,11 +17,8 @@ function CollectionsPage () {
     const store = imageStore()
 
 
-    
-
     useEffect(() => {
-    
-        store?.fetchCollections()
+        store.fetchCollections()
     }, [])
     
 
