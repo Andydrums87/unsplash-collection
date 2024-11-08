@@ -7,8 +7,8 @@ import authStore from "../stores/authStore";
 const mainURL = axios.create({
     baseURL: import.meta.env.VITE_BASE_URL,
     withCredentials: true,
-    credentials: 'include',
     timeout: 5000,
+    mode: 'no-cors',
 })
 
 
