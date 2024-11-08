@@ -18,7 +18,6 @@ function CollectionsPage () {
 
 
     useEffect(() => {
-        store.persist.rehydrate()
         store.fetchCollections()
     }, [])
     

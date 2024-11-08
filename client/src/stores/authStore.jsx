@@ -103,7 +103,7 @@ export const authStore = create(
                         email: "",
                         password: "",
                 }})
-                imageStore.persist.rehydrate()
+               
                 set({ isLoading: false})
                   
         } catch (err) { 
