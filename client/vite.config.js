@@ -5,9 +5,11 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: "/",
-  proxy: 
-    // "https://unsplash-collection-backend.onrender.com/",
-    "http://localhost:3000",
+
+    proxy:  "https://unsplash-collection-backend.onrender.com",
+
+
+    // "http://localhost:3000",
   
   build: {
     outDir: 'dist',

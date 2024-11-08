@@ -2,7 +2,6 @@
   "homepage": "/",
   "name": "client",
   "private": true,
-  "proxy": "https://unsplash-collection-frontend.onrender.com",
   "version": "0.0.0",
   "type": "module",
 
