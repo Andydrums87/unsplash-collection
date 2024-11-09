@@ -18,9 +18,11 @@ const session = require('express-session')
 
 const app = express()
 const corsOptions = {
-    origin: ['https://unsplash-collection-frontend.onrender.com', 'http://localhost:4173', 'http://192.168.0.9:4173', 'http://172.20.10.2:4173', 'https://unsplash-collection-backend.onrender.com', 'http://localhost:3000', 'http://localhost:5173'],
+    origin: 'https://unsplash-collection-frontend.onrender.com',
     credentials: true,
-    methods: ['GET', 'PUT', 'POST', 'DELETE']
+    methods: ['GET', 'PUT', 'POST', 'DELETE', 'HEAD'],
+    
+  
   };
   app.set("trust proxy",1);
   app.use(cors(corsOptions));
