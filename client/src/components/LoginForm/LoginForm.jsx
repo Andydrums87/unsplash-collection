@@ -40,7 +40,7 @@ function LoginForm () {
        <div className="blur" style={{filter: store.isLoading ? "blur(5px)" : "none"}}>
             <div className={styles.authCard}>
         <h2 className={styles.authHeading}>Login Here</h2>
-        <form onSubmit={(e)=>store.login(e)} className={styles.authForm}>   
+        <form onSubmit={store.login} className={styles.authForm}>   
         <label htmlFor="">Email</label>
         <input 
         required 
