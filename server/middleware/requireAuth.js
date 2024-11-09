@@ -9,7 +9,7 @@ try {
 
     const decoded = jwt.verify(token, `${process.env.SECRET_KEY}`);
 
-    if(Date.now() > decoded.exp) return res.sendStatus(401)
+    if(Date.now() > decoded.exp) return res.status(401).send({ message: "not this time"})
 
     const user = await User.findById(decoded.sub);
     if(!user) return res.status(401).send({ message: "user credentials not found"})
@@ -17,7 +17,7 @@ try {
     req.user = user;
     next();
 } catch (err) {
-    return res.sendStatus(401)
+    return res.status(401).send({ message: "no way"})
 }
 
 }
