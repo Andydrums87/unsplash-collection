@@ -45,17 +45,17 @@ app.get("/api/checkAuth", requireAuth, userController.checkAuth);
 app.post("/api/forget-password", userController.forgetPassword)
 app.post("/api/resetPassword/:token", userController.resetPassword)
 
-app.get("/api/collections", requireAuth, collectionController.fetchCollections);
-app.get("/api/collections/:id", requireAuth, collectionController.fetchCollection);
-app.get("/api/image/:id/collections", requireAuth, collectionController.fetchCollectionImg)
-app.post("/api/collections",  requireAuth, collectionController.createCollection);
-app.delete("/api/collections/:id", requireAuth, collectionController.deleteCollection);
+app.get("/api/collections",  collectionController.fetchCollections);
+app.get("/api/collections/:id",  collectionController.fetchCollection);
+app.get("/api/image/:id/collections",  collectionController.fetchCollectionImg)
+app.post("/api/collections",   collectionController.createCollection);
+app.delete("/api/collections/:id",  collectionController.deleteCollection);
 
-app.get("/api/collections/:id/image", requireAuth, photoController.fetchImages)
-app.get("api/collections/:id/image", requireAuth, photoController.fetchImage)
-app.get("/api/image/:id", requireAuth, photoController.fetchImage)
-app.post("/api/collections/:id/image", requireAuth, photoController.addImage)
-app.delete("/api/image/:id", requireAuth, photoController.deleteImage)
+app.get("/api/collections/:id/image",  photoController.fetchImages)
+app.get("api/collections/:id/image", photoController.fetchImage)
+app.get("/api/image/:id",  photoController.fetchImage)
+app.post("/api/collections/:id/image",  photoController.addImage)
+app.delete("/api/image/:id",  photoController.deleteImage)
 
 
 // const PORT = process.env.PORT || 3000
