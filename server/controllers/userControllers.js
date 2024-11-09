@@ -163,7 +163,7 @@ async function login(req, res) {
     
         res.cookie("Authorization", token, { 
             expires: new Date(exp),
-            httpOnly: true,
+            httpOnly: false,
             token: token,
             sameSite: "none",
             secure: true,
