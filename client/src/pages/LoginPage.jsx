@@ -11,13 +11,14 @@ import authStore from "../stores/authStore";
 
 function LoginPage () {
 
+
     return (
 
         <div>
-          <Nav /> 
+         <Nav /> 
          <Gradient />
-        <LoginForm />
-        <Spinner />
+         <LoginForm />
+         <Spinner />
   
         </div>
 

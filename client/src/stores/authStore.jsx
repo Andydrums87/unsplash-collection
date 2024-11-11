@@ -12,7 +12,7 @@ import {eye} from 'react-icons-kit/feather/eye'
 export const authStore = create(
     persist(
       (set, get) => ({
-    loggedIn: false,
+    loggedIn: null,
 
     loginForm: {
         email: "",
@@ -95,15 +95,15 @@ export const authStore = create(
         try {
             const { loginForm } = authStore.getState()
             const res = await mainURL.post(`/login`, loginForm)
-            console.log(res)
             set({ token: res.data.token })
             localStorage.setItem('token', res.data.token)
+            set({loggedIn: true, loginForm: {
+                email: "",
+                password: "",
+            }})
+            console.log(res)
+  
                 toast.success("Successfully Logged In")
-                set({loggedIn: true, loginForm: {
-                        email: "",
-                        password: "",
-                }})
-               
                 set({ isLoading: false})
                   
         } catch (err) { 
@@ -154,9 +154,9 @@ export const authStore = create(
         try {
             await mainURL.get(`/logout`)
             set({ token: "" })
-            // setTimeout(()=> {
-            //     toast.success("Successfully Logged Out")
-            // }, 300)
+            setTimeout(()=> {
+                toast.success("Successfully Logged Out")
+            }, 300)
             set({ loggedIn: false })
 
             set({ isLoading: false})
@@ -239,7 +239,7 @@ export const authStore = create(
     },
 
     setError: async () => { set({ errorMessage: ""})},
-    setLoggedIn: async () => { set({ loggedIn: false})}
+    // setLoggedIn: async () => { set({ loggedIn: false})}
     }), 
  
     {

@@ -15,7 +15,7 @@ import authStore from "../../stores/authStore";
 function ImageDetailsPage () {
 
     const store = imageStore()
-    const auth = authStore()
+
 
 
     useEffect(()=> {

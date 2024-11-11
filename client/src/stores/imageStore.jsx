@@ -130,11 +130,11 @@ export const imageStore = create(
     
       addImage: async (e) => {
               set({ isLoading: true})
-              console.log(e.target.id)
               const { imageData } = imageStore.getState()
               await mainURL.post(`/collections/${e.target.id}/image`, imageData)
               .then(res => {
-                toast.success(`Image added to "${get().filteredCollections[0].name}" collection`, { 
+                const object = get().filteredCollections.find(obj => obj._id === e.target.id);
+                toast.success(`Image added to collection ${object.name}`, { 
                   icon: ({theme, type}) =>  
                   <img style={{ height: "70px", width: "70px" }}src={res.data.image.url.thumb} />})
 
@@ -163,25 +163,12 @@ export const imageStore = create(
       },
         
 
-
-      
-
-        //  }  await mainURL.get(`/collections`) 
-        //     .then(result => {
-        //       console.log(result)
-        //       set({ collections: result.data?.collections})
-        //       set({ isLoading: false})
-        //     })
-        //     .catch(err => set({ isLoading: false}) console.log(err))
-            
-  
-
       fetchCollection: async (id) => {
         set({ isLoading: true })
         console.log(id)
         await mainURL.get(`/collections/${id}/image`)
         .then(result => {
-            // console.log(result.data)
+        
             const data = result.data
           set({ collection: data })
           
@@ -226,9 +213,6 @@ export const imageStore = create(
                toast.success("Image Deleted Successfully", {
                 icon: ({theme, type}) =>  
                 <img style={{height: "70px", width: "70px"}} src={get().listedCollection[0].url.thumb}/>})
-              //   setTimeout(function(){
-              //     window.location.reload();
-              //  }, 5000);
                 const newCollections = [...get().listedCollection].filter(col=>{
                   return col._id !== e.target.id
                 })

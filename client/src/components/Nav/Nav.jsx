@@ -19,16 +19,17 @@ function Nav () {
         await store.logout();
         imageStore.persist.clearStorage();
         image.initialState()
-        navigate("/login")
+        navigate("/")
+
     }
 
     return (
         <nav className="navBar" style={{borderColor: image.isOpen ? "#E5E7EBCC" : "#E5E7EB"}}>
-        <ul>  
-            <Toast />    
+               <Toast />    
+            <ul>  
                  <li className="logo"><img src={Logo} alt="logo" /></li>
                  <li><NavLink to="/">Home</NavLink></li>
-                 <li><NavLink to="/collections">Collections</NavLink></li>
+                 <li><NavLink to={"/collections"}>Collections</NavLink></li>
                  <li className="logout" onClick={handleNavigate} style={{display: store.loggedIn === false ? "none" : "block"}}>Logout</li>
             </ul>
         
