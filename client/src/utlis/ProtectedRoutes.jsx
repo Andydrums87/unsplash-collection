@@ -16,9 +16,9 @@ export default function ProtectedRoutes(props) {
         }
     }, [])
 
-    if(store.loggedIn === null) {
-        return <div>Loading</div>
-    }
+    // if(store.loggedIn === null) {
+    //     return <div>Loading</div>
+    // }
 
     if(store.loggedIn === false) {
         return <LoginPage />
