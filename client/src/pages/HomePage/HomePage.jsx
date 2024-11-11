@@ -3,10 +3,15 @@ import Nav from "../../components/Nav/Nav";
 import SearchInput from "../../components/SearchInput/SearchInput";
 import BarLoader from "../../components/Loading/BarLoader";
 import "./homePage.css"
+import authStore from "../../stores/authStore";
 
 
 
 function HomePage () {
+
+    const store = authStore()
+
+  
 
     return (
         <>

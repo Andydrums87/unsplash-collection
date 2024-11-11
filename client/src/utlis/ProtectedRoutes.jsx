@@ -11,14 +11,14 @@ export default function ProtectedRoutes(props) {
 
 
     useEffect(() => {
-        if(store.loggedIn === false) {
+        if(store.loggedIn === null) {
             store.checkAuth()
         }
     }, [])
 
-    // if(store.loggedIn === null) {
-    //     return <div>Loading</div>
-    // }
+    if(store.loggedIn === null) {
+        return <div>Loading</div>
+    }
 
     if(store.loggedIn === false) {
         return <LoginPage />
