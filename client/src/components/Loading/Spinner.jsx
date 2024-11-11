@@ -22,7 +22,7 @@ function Spinner () {
     aria-label="Loading Spinner"
     data-testid="loader"
     />
-    <span>Loading....</span>
+
     </div>
 
         </>

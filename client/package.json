@@ -21,6 +21,7 @@
     "infinite-scroll-component": "^0.0.4",
     "intersection-observer": "^0.12.2",
     "loadable-image": "^3.2.6",
+    "mem": "^10.0.0",
     "mkcert": "^3.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

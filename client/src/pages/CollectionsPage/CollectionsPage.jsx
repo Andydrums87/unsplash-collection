@@ -23,7 +23,7 @@ function CollectionsPage () {
     
 
     
-    if(store?.isLoading) return <Spinner />
+    if(store?.isLoading) return <div><Spinner /> <span>Loading....</span></div>
 
 
     return (

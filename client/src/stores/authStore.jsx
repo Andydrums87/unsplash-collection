@@ -6,7 +6,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import swal from "sweetalert"
 import {eyeOff} from 'react-icons-kit/feather/eyeOff';
 import {eye} from 'react-icons-kit/feather/eye'
-import imageStore from "./imageStore";
 
 
 

@@ -7,7 +7,7 @@ import axios from "axios"
 const mainURL = axios.create({
     baseURL: import.meta.env.VITE_BASE_URL,
     withCredentials: true,
-    timeout: 5000,
+    timeout: 10000,
 
 })
 
