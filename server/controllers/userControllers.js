@@ -162,16 +162,12 @@ async function login(req, res) {
         const token = jwt.sign({ sub: user._id, exp }, `${process.env.SECRET_KEY}`)
     
         res.cookie("Authorization", token, { 
-                   // can only be accessed by server requests
-        httpOnly: true,
-        // path = where the cookie is valid
-        path: "/",
-        // secure = only send cookie over https
-        secure: true,
-        // sameSite = only send cookie if the request is coming from the same origin
-        sameSite: "none", // "strict" | "lax" | "none" (secure must be true)
-        // maxAge = how long the cookie is valid for in milliseconds
-        maxAge: 3600000, // 1 hour
+            expires: new Date(exp),
+            httpOnly: true,
+            token: token,
+            sameSite: "none",
+            secure: true,
+            path: "/"
             // secure: process.env.NODE_ENV
         })
         user.save()

@@ -38,7 +38,7 @@ app.post("/api/signup", userController.signup);
 app.get("/verify-email")
 app.get("/api/verify-email/:id/verify/:token", userController.verifyEmail)
 app.post("/api/login",  userController.login);
-// app.post("/resendEmail", userController.sendEmailVerification)
+app.post("/api/resendEmail", userController.sendEmailVerification)
 app.get("/api/logout",  userController.logout);
 app.get("/api/checkAuth", requireAuth, userController.checkAuth);
 
