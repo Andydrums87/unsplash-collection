@@ -21,7 +21,7 @@ export default function ProtectedRoutes(props) {
     // }
 
     if(store.loggedIn === false) {
-        return <LoginForm />
+        return <LoginPage />
          
     
     }
