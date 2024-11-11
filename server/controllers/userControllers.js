@@ -171,6 +171,7 @@ async function login(req, res) {
             path: "/"
             // secure: process.env.NODE_ENV
         })
+        user.save()
         res.status(200).send({token: token, message: "Logged In"});
    
         console.log(user)
