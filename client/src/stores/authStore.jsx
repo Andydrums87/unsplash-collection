@@ -53,16 +53,15 @@ export const authStore = create(
     },
 
 
-    handlePassword: async(e) => {
-      
+    handlePassword: async (e) => {
         const{ value } = e.target
-        if(!value.match(get().lowerCase)) {
+        if(value.match(get().lowerCase)) {
             set({errorMessage: "Password should contain lower case letters"})
             set({ isValidPassword: false})
-        } else if (!value.match(get().upperCase)) {
+        } else if (value.match(get().upperCase)) {
             set({ errorMessage: "Password should contain at least one Upper Case character"})
             set({ isValidPassword: false})
-        } else if (!value.match(get().numbers)) {
+        } else if (value.match(get().numbers)) {
             set({ errorMessage: "Password should contain at least one number"})
             set({ isValidPassword: false})
         } else if (value.length < 10) {
@@ -95,15 +94,17 @@ export const authStore = create(
         try {
             const { loginForm } = authStore.getState()
             const res = await mainURL.post(`/login`, loginForm)
+           
             set({ token: res.data.token })
             localStorage.setItem('token', res.data.token)
+            toast.success("Successfully Logged In")
             set({loggedIn: true, loginForm: {
                 email: "",
                 password: "",
             }})
-            console.log(res)
+           
   
-                toast.success("Successfully Logged In")
+                
                 set({ isLoading: false})
                   
         } catch (err) { 

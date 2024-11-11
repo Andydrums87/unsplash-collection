@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from "react";
-import { useNavigate,  useParams } from "react-router-dom";
+import { useNavigate, Navigate,  useParams } from "react-router-dom";
 import axios from "axios"
 import "./verifyemail.css"
 import Nav from "../../components/Nav/Nav";
@@ -40,14 +40,14 @@ function VerifyEmail (){
     
 return (
     <>
-    <Nav />
+
     <Gradient />
       <div className="verify__container">
         <h1>{message}</h1>
         {isVerified ? 
-        <button className={styles.authBtn} onClick={()=>navigate("/collections")}>Login Here</button>
+        <button className={styles.authBtn} onClick={<Navigate to="/login" />}>Login Here</button>
         :
-        <button id="btn"><a href="/signup">Go Back</a></button>
+        <button id="btn"><a href="/login">Go Back</a></button>
         }
         
 

@@ -5,6 +5,7 @@ import BarLoader from "../../components/Loading/BarLoader";
 import "./homePage.css"
 
 
+
 function HomePage () {
 
     return (
@@ -16,7 +17,8 @@ function HomePage () {
                       <div className="container__middle">
                         <h3 className="heading__search">Search</h3>
                           <p className="home__info">Search high-resolution images from Unsplash</p>
-            <SearchInput />
+                         <SearchInput />
+                   
                         </div>
                     <div className="container__right"></div>
                 </div>

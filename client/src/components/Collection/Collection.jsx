@@ -32,6 +32,8 @@ useEffect(()=> {
 const handleCollectionDetail = (e) => {
     navigate("/collection", { state: collection})
   }
+
+  const noOfImages = collections.images?.length
   
 
     return (
@@ -40,7 +42,7 @@ const handleCollectionDetail = (e) => {
         <img className="collection__img" src={collections.images && collections.images[0]?.url.thumb} />
         <div className="card__middle">
         <p className="collection__name"id={id} onClick={(e)=>{store.handleNavigate(e); handleCollectionDetail(e)}}>{collection.name}</p>
-        <p className="collection__length">{collections.images?.length} photos</p>
+        <p className="collection__length">{noOfImages}{noOfImages === 1 ? " photo" : " photos"}</p>
      
     </div>
         

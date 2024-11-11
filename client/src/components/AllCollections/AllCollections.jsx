@@ -14,7 +14,6 @@ function AllCollections ({id, collection}) {
     const [collections, setCollections] = useState([])
    
 
-
     useEffect(()=> {
         mainURL.get(`/collections/${id}/image`, { withCredentials: true})
         .then(result => {
@@ -67,7 +66,7 @@ function AllCollections ({id, collection}) {
                 </div>
              <div className="card__bottom">
                 <p className="collection__name" id={id} onClick={(e)=>{store.handleNavigate(e); handleCollectionDetail(e)}}>{collection.name}</p>
-        <p className="collection__length">{length} photos</p>
+        <p className="collection__length">{length} {length === 1 ? " photo" : " photos"}</p>
         </div> 
 
         </div>

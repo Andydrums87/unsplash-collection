@@ -1,4 +1,6 @@
-
+.search__form {
+    position: relative;
+}
 
 .search__input {
 
@@ -7,12 +9,21 @@
     border-radius: 5px;
     border:1px solid 
     #E5E7EB;
-    background-image: url(/src/assets/Search.svg);
+    /* background-image: url(/src/assets/Search.svg);
     background-repeat: no-repeat;
-    background-position: 95% 50%; 
+    background-position: 95% 50%;  */
     cursor: pointer;
    
 }
+
+.search__glass {
+    position: absolute;
+    left:90%;
+    top:25%;
+    cursor:pointer;
+    
+}
+
 
 @media (max-width: 640px) {
     .search__input {

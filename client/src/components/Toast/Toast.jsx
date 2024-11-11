@@ -10,13 +10,12 @@ function Toast () {
 
     return (
         <ToastContainer 
-        autoClose={3000}
+        autoClose={2000}
         className="toast"
         theme="light"
         toastClassName="toast__wrapper"
         progressClassName="toast__progress" 
         bodyClassName="toast__body"
-
         />
     )
 }

@@ -20,7 +20,7 @@ function SingleCollectionPage () {
         <Nav />
         <div className="single__collection__info" style={{textAlign: "center", marginTop: "20px"}}>
         <p className="heading__title">{data?.name}</p>
-        <p >{store.images?.length} Photos</p>
+        <p >{store.images?.length} {store.images?.length === 1 ? " photo" : " photos"}</p>
         </div>
         <SingleCollectionImages />    
        </div>

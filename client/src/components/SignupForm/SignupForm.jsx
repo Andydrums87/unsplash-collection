@@ -48,14 +48,14 @@ function SignupForm () {
             <label htmlFor="">Password</label>
             <div className={styles.inputWrapper}>
             <input  
-            required
             // style={{borderColor: store?.errorMessage === "Strong Password" ? "limegreen" : "red"}} 
             onChange={(e)=>{store.updateSignUpForm(e); store.handlePassword(e)}} 
             value={store.signUpForm.password} 
             autoComplete="new-password" 
             type={store.type} 
             placeholder="Enter your password"
-            name="password" />  
+            name="password"
+            required />  
             <span className={styles.error__span}>A valid password contains a minimum of 10 characters, one UpperCase and at least one Lowercase character</span>     
             <span id={styles.toggle}className={styles.toggleIcon}onClick={store.handleToggle}>
             <Icon icon={store.icon} size={"15px"} />

@@ -23,18 +23,16 @@ function LoginForm () {
         navigate("/signup")
     }
 
-// const handleVerify = async () => {
-//     try {
-//         await mainURL.post(`/resendEmail`, store.loginForm);
-//             swal(`Verification link sent to ${store.loginForm?.email}. Just click on the link in the email to complete your signup. 
-//                 If you don't see it you may need to check your spam folder`);
-              
-            
-//     } catch (err) {
-//         console.log(err)
-//     }
+const handleVerify = async () => {
+    try {
+        await mainURL.post(`/resendEmail`, store.loginForm);
+            swal(`Verification link sent to ${store.loginForm?.email}. Just click on the link in the email to complete your signup. 
+                If you don't see it you may need to check your spam folder`);
+    } catch (err) {
+        console.log(err)
+    }
     
-// }
+}
 
 
     return (
@@ -90,7 +88,7 @@ function LoginForm () {
                 
             <p id={styles.authErrorMsg}>{store?.errorMessage ? `${store?.errorMessage}` : ""}</p>
             
-            {/* <button  onClick={handleVerify} style={{display: store?.errorMessage === "Please verify your account" ? "block" : "none"}}>Verify Account</button> */}
+            <button className={styles.authBtn} onClick={handleVerify} style={{display: store?.errorMessage === "Please verify your account" ? "block" : "none"}}>Verify Account</button>
             <button className={styles.authBtn}>Login</button>
         </form>
         
