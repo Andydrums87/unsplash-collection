@@ -18,7 +18,7 @@ const session = require('express-session')
 
 const app = express()
 const corsOptions = {
-    origin: 'www.unsplash-collection-project.com',
+    origin: ['https://www.unsplash-collection-project.com'],
     credentials: true,
     methods: ['GET', 'PUT', 'POST', 'DELETE', 'HEAD'],
     
