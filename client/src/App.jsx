@@ -13,7 +13,7 @@ import VerifyEmail from './pages/VerifyEmail/VerifyEmail'
 import ForgetPassword from './pages/ForgetPassword'
 import ResetPassword from './pages/ResetPassword'
 import ProtectedRoutes from './utlis/ProtectedRoutes'
-import Nav from './components/Nav/Nav'
+
 
 
 function App() {
