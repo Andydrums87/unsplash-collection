@@ -23,9 +23,7 @@ function App() {
     <div className="main__body">
 
     <BrowserRouter>
-
      <Routes>
-
       <Route path="/" element={<HomePage />}/>
       <Route path="/login" element={<LoginPage />}/>
       <Route path="/signup" element={<SignUpPage />}/>
