@@ -158,7 +158,7 @@ export const imageStore = create(
     
         } catch (err) {
           set({ isLoading: false })
-          console.log(err)
+          console.log(err + "you")
         }
       },
         
