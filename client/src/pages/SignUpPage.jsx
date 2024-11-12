@@ -11,6 +11,7 @@ function SignUpPage () {
         <Gradient />
         <SignupForm />
         <Spinner />
+  
         </>
       
     )

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Modal.css"
 import imageStore from "../../stores/imageStore";
 import Collection from "../Collection/Collection";
+import Spinner from "../Loading/Spinner";
 
 
 
@@ -14,17 +15,14 @@ function Modal () {
   store.fetchCollections()
  }, [])
 
- 
 
 
     return (
         <>
-
         <div className="pop_up_container" style={{display: store.isOpen == false ? "none" : "block"}} >
-       
-      {store.listedCollection?.length > store.listedCollection?.length + 1 && console.log("hello")}
+        {store.listedCollection?.length > store.listedCollection?.length + 1 && console.log("hello")}
         <h1 className="popup__heading">Add To Collections</h1>
-        <form onSubmit={(e)=>store.handleNewCollection(e)}>
+        <form onSubmit={store.handleNewCollection}>
         <input id="popup__input"className="search__input" type="text" value={store.collectionName.name} onChange={(e)=>store.searchCollections(e)} name="name" placeholder="collection name" />
         <button id="btn" style={{display: store.filteredCollections?.length == 0 ? "block" : "none"}}>New Collection</button>
         </form>

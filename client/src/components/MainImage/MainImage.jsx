@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AsyncImage } from "loadable-image"
 import imageStore from "../../stores/imageStore";
 
 function MainImage () {
 
     const store = imageStore()
+
+
 
     return (
 

@@ -29,6 +29,10 @@ width:80%;
     left:50%;
     transform: translate(-50%);
     top:50%;
+    display: flex;
+    align-items: center;
+    gap:5px;
+    
  }
 
 

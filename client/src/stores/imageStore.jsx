@@ -19,6 +19,7 @@ export const imageStore = create(
        totalPages: 1,
        hasMore: true,
        isLoading: false,
+       isModalLoading: false,
        imageData: null,
        errorMessage: null,
        listedCollection: null,
@@ -136,13 +137,11 @@ export const imageStore = create(
                 const object = get().filteredCollections.find(obj => obj._id === e.target.id);
                 toast.success(`Image added to collection ${object.name}`, { 
                   icon: ({theme, type}) =>  
-                  <img style={{ height: "70px", width: "70px" }}src={res.data.image.url.thumb} />})
-
-               const newCollections = res.data.image
+                <img style={{ height: "70px", width: "70px" }}src={res.data.image.url.thumb} />})
+                const newCollections = res.data.image
                set((state) => ({ listedCollection: [...state.listedCollection, newCollections]}))
-               set({ isLoading: false})
-              
-    
+               set({ isLoading: false})  
+               set({ isOpen: false})
               })
 
               .catch(err=> toast.error(err))
@@ -229,19 +228,18 @@ export const imageStore = create(
     
       handleNewCollection: async (e) => {
               e.preventDefault()
+              set({ isLoading: true })
               await mainURL.post(`/collections`, get().collectionName)
              .then(res => {
-               const data = res.data.collections
+               const data = res.data
+               const collection = data.collection
+               set((state) => ({ collections: [...state.collections, collection]}))
                toast.success("New Collection Created")
-               setTimeout(function(){
-                window.location.reload();
-             }, 1000);
-               console.log(res);
-               set((state) => ({ collections: [...state.collections, ...data]}))
-            set({ isLoading: false})
-             })
+               set((state) => ({ filteredCollections: [...state.filteredCollections, collection]}))
+               set({ isLoading: false})
+              })
              .catch(err => console.log(err))
-      },
+      },  
              
       searchCollections: async (e) => {
               set({ filteredCollections: null})

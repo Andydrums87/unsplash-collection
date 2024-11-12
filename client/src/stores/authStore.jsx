@@ -24,9 +24,6 @@ export const authStore = create(
         email: "",
         password: "",
     },
-    lowerCase: /[a-z]/g,
-    upperCase: /[A-Z]/g,
-    numbers: /[0-9]/g,
     errorMessage: "",
     res: "",
     isValidPassword: false,
@@ -51,27 +48,6 @@ export const authStore = create(
                 };
             });
     },
-
-
-    handlePassword: async (e) => {
-        const{ value } = e.target
-        if(value.match(get().lowerCase)) {
-            set({errorMessage: "Password should contain lower case letters"})
-            set({ isValidPassword: false})
-        } else if (value.match(get().upperCase)) {
-            set({ errorMessage: "Password should contain at least one Upper Case character"})
-            set({ isValidPassword: false})
-        } else if (value.match(get().numbers)) {
-            set({ errorMessage: "Password should contain at least one number"})
-            set({ isValidPassword: false})
-        } else if (value.length < 10) {
-            set({ errorMessage: "Password must contain at least 10 characters"})
-            set({ isValidPassword: false})
-        } else {
-            set({ errorMessage: "Strong Password"})
-            set({ isValidPassword: true})
-        }
-    },
     updateSignUpForm: (e) => {
         set({errorMessage: ""})
         const {name, value} = e.target;
@@ -87,6 +63,30 @@ export const authStore = create(
             });
             
     },
+    handlePassword: async (e) => {
+        const{ value } = e.target
+        const lowerCase = /[a-z]/g
+        const upperCase = /[A-Z]/g
+        const numbers = /[0-9]/g
+
+        if(!value.match(lowerCase)) {
+            set({ errorMessage: "Password should contain lower case letters" })
+            set({ isValidPassword: false})
+        } else if (!value.match(upperCase)) {
+            set({ errorMessage: "Password should contain at least one Upper Case character"})
+            set({ isValidPassword: false})
+        } else if (!value.match(numbers)) {
+            set({ errorMessage: "Password should contain at least one number"})
+            set({ isValidPassword: false})
+        } else if (value.length < 10) {
+            set({ errorMessage: "Password must contain at least 10 characters"})
+            set({ isValidPassword: false})
+        } else {
+            set({ errorMessage: "Strong Password"})
+            set({ isValidPassword: true})
+        }
+    },
+    
     login: async (e) => {
         e.preventDefault()
         set({ isLoading: true })
@@ -130,7 +130,7 @@ export const authStore = create(
         try {
             if(!get().isValidPassword) {
                 set({ isLoading: false})
-                return set({errorMessage: "Invalid Password"})
+                return set({ errorMessage: "Invalid Password" })
             }
             const { signUpForm } = authStore.getState()
 

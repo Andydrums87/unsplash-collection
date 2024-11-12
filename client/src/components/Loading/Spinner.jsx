@@ -17,12 +17,12 @@ function Spinner () {
         <>
     <div className="spinner__container">
     <ClipLoader
-    loading={auth?.isLoading || store?.isLoading}
-    size={40}
+    loading={auth?.isLoading || store?.isLoading }
+    size={30}
     aria-label="Loading Spinner"
     data-testid="loader"
     />
-
+    <span style={{fontSize: "12px"}}>...Loading</span>
     </div>
 
         </>
