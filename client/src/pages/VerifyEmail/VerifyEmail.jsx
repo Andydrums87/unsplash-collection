@@ -45,7 +45,7 @@ return (
       <div className="verify__container">
         <h1>{message}</h1>
         {isVerified ? 
-        <button className={styles.authBtn} onClick={<Navigate to="/login" />}>Login Here</button>
+        <button className={styles.authBtn}><a href="/collections"></a>Login Here</button>
         :
         <button id="btn"><a href="/login">Go Back</a></button>
         }

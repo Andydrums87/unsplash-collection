@@ -30,6 +30,7 @@ function ImageDetailsPage () {
         <div className="details__wrapper" style={{backgroundColor: store.isOpen ? "#E5E7EB" : "#FFFFFF"}}>
           <Nav />
             <div className="details__container">
+          
               <MainImage />
               <div className="details__right">
                <UserInfo />

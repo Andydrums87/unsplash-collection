@@ -19,6 +19,7 @@ function SearchResultPage () {
         <SearchInput />
         </div>
         <SearchResults />
+        <a href="/collections"></a>
         </>
     
     )

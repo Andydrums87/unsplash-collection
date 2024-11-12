@@ -7,6 +7,8 @@ import authStore from "../../stores/authStore";
 
 
 
+
+
 function HomePage () {
 
     const store = authStore()
@@ -23,9 +25,11 @@ function HomePage () {
                         <h3 className="heading__search">Search</h3>
                           <p className="home__info">Search high-resolution images from Unsplash</p>
                          <SearchInput />
-                   
+                     
                         </div>
                     <div className="container__right"></div>
+              
+                   
                 </div>
         </>
     )
