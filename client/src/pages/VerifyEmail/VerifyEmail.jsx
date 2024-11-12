@@ -37,6 +37,11 @@ function VerifyEmail (){
         verifyUser()
     }, [params.id, params.token])
 
+    const handleNavigate = () => {
+        navigate("/collections")
+    }
+
+
     
 return (
     <>
@@ -44,11 +49,11 @@ return (
     <Gradient />
       <div className="verify__container">
         <h1>{message}</h1>
-        {isVerified ? 
-        <button className={styles.authBtn}><a href="/collections"></a>Login Here</button>
-        :
-        <button id="btn"><a href="/login">Go Back</a></button>
-        }
+   
+        <button onClick={handleNavigate}className={styles.authBtn}>Login Here</button>
+        
+      
+        
         
 
   
