@@ -92,7 +92,11 @@ async function signup(req, res) {
 
 async function sendEmailVerification (req, res) {
     const { email } = req.body
+    
     const user = await User.findOne({ email })
+    if(user.verified) {
+        return;
+    }
     const emailToken = jwt.sign({
         email: user.email
     }, `${process.env.SECRET_KEY}`, { expiresIn: '10m'})
