@@ -4,14 +4,13 @@
     gap:1rem;
     flex-wrap: wrap;
     width:100%;
+    position: relative;
     
     
 }
 
 .card {
     width:30%;
-
-
     height:250px;
     margin-bottom: 10px;;
     

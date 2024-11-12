@@ -11,13 +11,14 @@ function Collection ({id, collection}) {
     const navigate = useNavigate()
 
     const [collections, setCollections] = useState([])
-
-    
+    const [loading, setLoading] = useState(false)
 
     useEffect(()=> {
+        setLoading(false)
         mainURL.get(`/collections/${id}/image`)
         .then(result => {
          setCollections(result.data)
+         setLoading(true)
         
         })
       .catch(err => console.log(err))

@@ -14,35 +14,6 @@
     column-gap: 16px;
 }
 
-.loading__slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40%;
-    height:100%;
-    background-color: rgba(255, 255, 255, 0.3);
-    -webkit-animation: slide ease-out 1s infinite;
-    animation: slide ease-out 1s infinite;
-}
-
-@-webkit-keyframes slide {
-    0% {
-        left: -50%;
-    }
-    100% {
-        left: 100%
-    }
-}
-
-@keyframes slide {
-    0% {
-        left: -50%
-    }
-    100% {
-        left: 100%
-    }
-}
-
 .no__images {
     display: flex;
     width:100vw;
