@@ -35,7 +35,11 @@ function Collections () {
                 {img.singleCollection?.map((c, i) => {
                   return (
                     <div key={i} className="main__container">
-                      <Collection collection={c} key={c._id} id={c._id}/>
+                      <Collection 
+                      collection={c} 
+                      key={c._id} 
+                      id={c._id} 
+                      />
                         <div className="add__delete">
                           {/* <img src="src/assets/Remove.svg" alt="Delete Photo" /> */}
                       <button className="delete__collection" id={img._id} onClick={(e)=>store.deleteFromCollection(e)}>Remove</button>

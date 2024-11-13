@@ -3,8 +3,9 @@ import imageStore from "../../stores/imageStore";
 import { useNavigate  } from "react-router-dom";
 import { mainURL } from "../../utlis/axios"
 import "./collection.css"
+import { AsyncImage } from "loadable-image";
 
-function Collection ({id, collection}) {
+function Collection ({id, collection, hidden}) {
     
     const store = imageStore()
 
@@ -35,12 +36,25 @@ const handleCollectionDetail = (e) => {
   }
 
   const noOfImages = collections.images?.length
+
+  const image = collections.images && collections.images[0] || store.images
   
+
 
     return (
         
     <div key={id} className="collection__card">
-        <img className="collection__img" src={collections.images && collections.images[0]?.url.thumb} />
+        <AsyncImage 
+            className="collection__img"
+            src={image.url?.thumb}
+            alt={image?.description}
+            loader={<div style={{background: "#e5e7eb" }}>
+                    <div className="loading__slide"></div>
+                    </div>}
+            error={<div style={{background: "red" }} />}
+            style={{ height: "100%" }}
+        />
+
         <div className="card__middle">
         <p className="collection__name"id={id} onClick={(e)=>{store.handleNavigate(e); handleCollectionDetail(e)}}>{collection.name}</p>
         <p className="collection__length">{noOfImages}{noOfImages === 1 ? " photo" : " photos"}</p>
