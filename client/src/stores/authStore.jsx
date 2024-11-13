@@ -94,10 +94,10 @@ export const authStore = create(
         try {
             const { loginForm } = authStore.getState()
             const res = await mainURL.post(`/login`, loginForm)
-           
+            toast.success("Successfully Logged In")
             set({ token: res.data.token })
             localStorage.setItem('token', res.data.token)
-            toast.success("Successfully Logged In")
+           
             set({loggedIn: true, loginForm: {
                 email: "",
                 password: "",
